@@ -21,9 +21,13 @@ Esta carpeta contiene la documentaciÃ³n viva de la aplicaciÃ³n web de mapas 
 - [15-iteracion-4-provincias-escribir.md](./15-iteracion-4-provincias-escribir.md): juego de escritura de provincias sobre mapa con vista ampliada por CCAA.
 - [16-reconoce-la-comunidad.md](./16-reconoce-la-comunidad.md): juego de reconocimiento visual de comunidades por silueta aislada.
 - [17-reconoce-la-provincia.md](./17-reconoce-la-provincia.md): juego de reconocimiento visual de 20 provincias aleatorias por silueta aislada.
+- [18-dime-la-capital.md](./18-dime-la-capital.md): juego de capitales de comunidades autónomas.
+- [19-arrastra-la-capital.md](./19-arrastra-la-capital.md): juego de arrastrar capitales autonómicas a su punto en el mapa.
 
 ## Criterio de mantenimiento
 
 Estos documentos deben actualizarse cuando cambien requisitos, prioridades o decisiones tÃ©cnicas.  
 La intenciÃ³n es que reflejen el estado vigente del proyecto, no solo una fotografÃ­a inicial.
+
+
 

@@ -17,6 +17,16 @@ export function ResultScreen({
   const [showAllAnswers, setShowAllAnswers] = useState(false);
   const wrongAnswers = result.answers.filter((answer) => !answer.isCorrect);
   const visibleAnswers = showAllAnswers ? result.answers : wrongAnswers;
+  const resultActions = (
+    <>
+      <button type="button" onClick={onReplay}>
+        Repetir juego
+      </button>
+      <button className="secondary-button" type="button" onClick={onBackHome}>
+        Volver al inicio
+      </button>
+    </>
+  );
 
   return (
     <main className="app-shell result-shell">
@@ -27,6 +37,10 @@ export function ResultScreen({
           {result.correctAnswers} de {result.totalAnswers} correctas
         </p>
       </section>
+
+      <div className="action-row result-action-row result-action-row-top" aria-label="Acciones de resultado">
+        {resultActions}
+      </div>
 
       <section className="panel result-panel">
         <div className="result-map-section">
@@ -88,13 +102,8 @@ export function ResultScreen({
         )}
       </section>
 
-      <div className="action-row">
-        <button type="button" onClick={onReplay}>
-          Repetir juego
-        </button>
-        <button className="secondary-button" type="button" onClick={onBackHome}>
-          Volver al inicio
-        </button>
+      <div className="action-row result-action-row" aria-label="Acciones de resultado">
+        {resultActions}
       </div>
     </main>
   );

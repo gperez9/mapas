@@ -250,3 +250,5 @@ Un juego no se considera terminado hasta que:
 - soporta los alias previstos cuando aplique;
 - ha sido probado con ratÃ³n y tÃ¡ctil.
 
+
+

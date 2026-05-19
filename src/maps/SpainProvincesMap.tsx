@@ -5,7 +5,7 @@ import mapMarkup from "./svg/provinces-map.svg?raw";
 
 type ResultState = "correct" | "incorrect";
 
-const communityFillColors: Record<string, string> = {
+export const communityFillColors: Record<string, string> = {
   andalucia: "#bfe7c5",
   aragon: "#f6d7a8",
   asturias: "#cfe0fb",

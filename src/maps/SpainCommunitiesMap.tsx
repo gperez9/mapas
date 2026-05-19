@@ -191,7 +191,7 @@ export function SpainCommunitiesMap({
 
   return (
     <div
-      className="communities-map interactive-map"
+      className={`communities-map ${resultStates ? "result-map" : "interactive-map"}`}
       ref={containerRef}
       onPointerMove={(event) => {
         const regionId = getRegionIdFromPoint(event.clientX, event.clientY);

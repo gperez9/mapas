@@ -482,6 +482,12 @@ h2 {
   min-height: 22rem;
 }
 
+.result-map {
+  position: relative;
+  min-height: 22rem;
+  touch-action: pan-y;
+}
+
 .communities-map svg {
   width: 100%;
   height: auto;
@@ -514,6 +520,33 @@ h2 {
 .province-placed-label {
   max-width: 5.8rem;
   font-size: clamp(0.46rem, 0.9vw, 0.68rem);
+}
+
+.capital-marker-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.capital-target-marker {
+  position: absolute;
+  width: 0.86rem;
+  height: 0.86rem;
+  transform: translate(-50%, -50%);
+  border: 2px solid #203040;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 0.18rem rgba(255, 209, 102, 0.55);
+}
+
+.capital-target-marker.is-active {
+  background: #ffd166;
+  box-shadow: 0 0 0 0.28rem rgba(255, 209, 102, 0.5);
+}
+
+.capital-placed-label {
+  max-width: 7rem;
+  font-size: clamp(0.48rem, 0.95vw, 0.72rem);
 }
 
 .province-label-tray {
@@ -638,6 +671,7 @@ h2 {
 
 .result-map-wrapper {
   position: relative;
+  touch-action: pan-y;
 }
 
 .result-label-layer {
@@ -748,6 +782,14 @@ h2 {
 .result-panel {
   max-width: 72rem;
   margin: 0 auto 1rem;
+}
+
+.result-action-row {
+  margin-bottom: 1rem;
+}
+
+.result-action-row-top {
+  margin-top: -0.25rem;
 }
 
 .result-map-section p {

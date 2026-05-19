@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import { autonomousCommunities } from "../data/autonomousCommunities";
+import { CapitalsDragGame } from "../games/capitals-drag/CapitalsDragGame";
+import { CommunityCapitalGame } from "../games/community-capital/CommunityCapitalGame";
 import { CommunitiesDragGame } from "../games/communities-drag/CommunitiesDragGame";
 import { CommunitiesWriteGame } from "../games/communities-write/CommunitiesWriteGame";
 import { GuessCommunityGame } from "../games/guess-community/GuessCommunityGame";
@@ -15,6 +17,8 @@ import type { GameResult } from "../games/shared/types";
 
 type Screen =
   | "home"
+  | "capitals-drag"
+  | "community-capital"
   | "communities-drag"
   | "communities-write"
   | "guess-community"
@@ -82,6 +86,18 @@ export function App() {
         onStart: () => setScreen("province-count"),
       },
       {
+        title: "Dime la capital",
+        description: "Escribe la capital de cada comunidad autónoma.",
+        level: "easy",
+        onStart: () => setScreen("community-capital"),
+      },
+      {
+        title: "Arrastra la capital",
+        description: "Coloca cada capital en su punto del mapa.",
+        level: "easy",
+        onStart: () => setScreen("capitals-drag"),
+      },
+      {
         title: "Dime las provincias",
         description: "Escribe las provincias de cada comunidad autónoma.",
         level: "easy",
@@ -100,6 +116,30 @@ export function App() {
   if (screen === "communities-drag") {
     return (
       <CommunitiesDragGame
+        onFinish={(nextResult) => {
+          setResult(nextResult);
+          setScreen("result");
+        }}
+        onExit={() => setScreen("home")}
+      />
+    );
+  }
+
+  if (screen === "community-capital") {
+    return (
+      <CommunityCapitalGame
+        onFinish={(nextResult) => {
+          setResult(nextResult);
+          setScreen("result");
+        }}
+        onExit={() => setScreen("home")}
+      />
+    );
+  }
+
+  if (screen === "capitals-drag") {
+    return (
+      <CapitalsDragGame
         onFinish={(nextResult) => {
           setResult(nextResult);
           setScreen("result");
@@ -230,10 +270,14 @@ export function App() {
                 : result.title.startsWith("Escribe")
                 ? "provinces-write"
                 : "provinces-drag"
+              : result.title === "Arrastra la capital"
+                ? "capitals-drag"
               : result.title.startsWith("Clasifica")
                 ? "province-sort"
               : result.title.startsWith("Dime")
-                ? "province-list"
+                ? result.title === "Dime la capital"
+                  ? "community-capital"
+                  : "province-list"
               : result.title.startsWith("Cuántas")
                 ? "province-count"
               : result.title.startsWith("Adivina")
