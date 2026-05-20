@@ -549,6 +549,53 @@ h2 {
   font-size: clamp(0.48rem, 0.95vw, 0.72rem);
 }
 
+.capital-result-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.capital-result-point {
+  position: absolute;
+  display: grid;
+  gap: 0.16rem;
+  justify-items: center;
+  width: max-content;
+  max-width: 8rem;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  color: #203040;
+  box-shadow: none;
+}
+
+.capital-result-dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid #203040;
+  border-radius: 999px;
+  box-shadow: 0 0 0 0.16rem rgba(255, 255, 255, 0.8);
+}
+
+.capital-result-point.correct .capital-result-dot {
+  background: #70c47f;
+}
+
+.capital-result-point.incorrect .capital-result-dot {
+  background: #ef7c7c;
+}
+
+.capital-result-label {
+  padding: 0.2rem 0.42rem;
+  border: 1.5px solid #203040;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: clamp(0.62rem, 1.15vw, 0.9rem);
+  font-weight: 800;
+  line-height: 1.12;
+  text-align: center;
+}
+
 .province-label-tray {
   max-height: 38rem;
   overflow: auto;

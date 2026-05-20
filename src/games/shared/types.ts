@@ -7,7 +7,7 @@ export type RegionAnswer = {
 };
 
 export type GameResult = {
-  mapKind: "communities" | "provinces" | "none";
+  mapKind: "communities" | "provinces" | "capitals" | "none";
   title: string;
   correctAnswers: number;
   totalAnswers: number;

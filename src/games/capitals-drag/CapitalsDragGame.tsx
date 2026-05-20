@@ -81,7 +81,7 @@ export function CapitalsDragGame({ onFinish, onExit }: CapitalsDragGameProps) {
 
     onFinish(
       buildGameResult(
-        "none",
+        "capitals",
         "Arrastra la capital",
         communityCapitals.map((targetCapital) => {
           const community = autonomousCommunities.find((item) => item.id === targetCapital.communityId);

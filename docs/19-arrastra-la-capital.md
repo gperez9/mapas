@@ -29,6 +29,7 @@ Practicar la localización aproximada de las capitales autonómicas en el mapa d
 - Cada comunidad autónoma cuenta como una opción.
 - Cada capital colocada en su punto correcto suma un acierto.
 - La nota final es `aciertos / 17`, expresada sobre 10.
+- En el mapa de resultados, cada capital aparece sobre su punto: verde si se coloc? bien y rojo si se fall? o qued? sin colocar.
 
 ## Nivel
 

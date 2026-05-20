@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SpainCapitalsResultMap } from "../../maps/SpainCapitalsResultMap";
 import { SpainCommunitiesResultMap } from "../../maps/SpainCommunitiesResultMap";
 import { SpainProvincesResultMap } from "../../maps/SpainProvincesResultMap";
 import type { GameResult } from "./types";
@@ -54,6 +55,8 @@ export function ResultScreen({
             <SpainCommunitiesResultMap answers={result.answers} />
           ) : result.mapKind === "provinces" ? (
             <SpainProvincesResultMap answers={result.answers} />
+          ) : result.mapKind === "capitals" ? (
+            <SpainCapitalsResultMap answers={result.answers} />
           ) : (
             <p className="empty-state">No hay mapa específico para este modo.</p>
           )}
